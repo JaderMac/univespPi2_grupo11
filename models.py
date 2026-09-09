@@ -1,7 +1,8 @@
 from sqlalchemy import Boolean
+from flask_login import UserMixin
 from db import db 
 
-class Usuario(db.Model):
+class Usuario(UserMixin, db.Model):
     
     def __init__(self, nome, email, senha):
         self.nome = nome
